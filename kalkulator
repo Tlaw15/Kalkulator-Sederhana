@@ -1,0 +1,78 @@
+#!/usr/bin/bash
+
+#Colors
+RBLCK="\033[35;106m"
+RBG="\033[1;101m"
+RSTBG="\e[0m\n"
+W="\033[0;37m"
+GY="\033[0;37m"
+PP="\033[0;35m"
+R="\033[0;31m"
+WG="\033[4;37m"
+G="\033[0;32m"
+Y="\033[0;33m"
+P="\033[0;35m"
+C="\033[0;36m"
+Ca="\033[4;33m"
+F="\033[0;35m"
+B="\033[1;34m"
+nc="\e[0m"
+
+banner-about(){
+    clear
+    echo -ne "${R}█▀▀█ █▀▀▄ █▀▀█ █  █ ▀▀█▀▀\n"; sleep 0.01s
+    echo -ne "${R}█▄▄█ █▀▀▄ █  █ █  █   █\n"; sleep 0.01s
+    echo -ne "${R}▀  ▀ ▀▀▀  ▀▀▀▀  ▀▀▀   ▀ \n"; sleep 0.01s
+}
+about(){
+    echo; echo -ne "${R}[${G}-${R}] ${W}Tools Created By (Rs1) ${R}[${G}-${R}]\n"; echo; sleep 0.01s
+    echo -ne "${R}[${G}::${R}] ${W}Kalkulator Sederhana ${R}[${G}::${R}]\n"; echo; sleep 0.01s
+    echo -ne "${G}Author  ${R}: ${W}Rs1 (CWR)\n"; sleep 0.01s
+    echo -ne "${G}Github  ${R}: ${WG}https://github.com/S4ND1ROOT15\n"; sleep 0.01s
+    echo -ne "${G}Website ${R}: ${WG}https://tlaw.com/\n"; sleep 0.01s
+    echo -ne "${G}Warning ${R}: ${W}Happy Creative\n"; echo; sleep 0.01s
+    echo -ne "${R}[${W}Enter${R}]: "; read
+}
+
+banner(){
+    echo -ne "${R}█ █ █▀▀█ █   █ █ █  █ █   █▀▀█ ▀▀█▀▀ █▀▀█ █▀▀█\n"; sleep 0.01s
+    echo -ne "${R}█▀▄ █▄▄█ █   █▀▄ █  █ █   █▄▄█   █   █  █ █▄▄▀\n"; sleep 0.01s
+    echo -ne "${R}▀ ▀ ▀  ▀ ▀▀▀ ▀ ▀  ▀▀▀ ▀▀▀ ▀  ▀   ▀   ▀▀▀▀ ▀ ▀▀\n"; sleep 0.01s
+    echo; echo -ne "${R}[${G}-${R}] ${W}Tools Created By (Rs1) ${R}[${G}-${R}]\n"; echo; sleep 0.01s
+}
+while :
+do
+    clear
+    banner
+    echo -ne "${R}[${W}01${R}] ${W}kali *\n"; sleep 0.01s
+    echo -ne "${R}[${W}02${R}] ${W}kurangi -\n"; sleep 0.01s
+    echo -ne "${R}[${W}03${R}] ${W}bagi /\n"; sleep 0.01s
+    echo -ne "${R}[${W}04${R}] ${W}jumlah +\n"; echo; sleep 0.01s
+    echo -ne "${R}[${W}99${R}] ${W}About     "; sleep 0.01s
+    echo -ne "${R}[${W}00${R}] ${W}Exit\n"; sleep 0.01s; echo
+    echo -ne "${R}[${G}-${R}] ${G}Select An Option :${W} "; read pil
+    case $pil in
+        #perkalian
+        ( 1 | 01 ) echo; echo -ne "${R}[${W}*${R}] ${W}Bagian 1 : "; sleep 0.01s; read kali1
+            echo -ne "${R}[${W}*${R}] ${W}Bagian 2 : "; sleep 0.01s; read kali2
+            jawab=`expr $kali1 \* $kali2`
+            echo -ne "${R}[${W}*${R}] ${G}$kali1 * $kali2 = $jawab "; sleep 0.01s; read;;
+        #perkurangan
+        ( 2 | 02 ) echo; echo -ne "${R}[${W}-${R}] ${W}Bagian 1 : "; sleep 0.01s; read kurangi1
+            echo -ne "${R}[${W}-${R}] ${W}Bagian 2 : "; sleep 0.01s; read kurangi2
+            jawab=`expr $kurangi1 - $kurangi2`
+            echo -ne "${R}[${W}-${R}] ${G}$kurangi1 - $kurangi2 = $jawab "; sleep 0.01s; read;;
+            #pembagian
+        ( 3 | 03 ) echo; echo -ne "${R}[${W}/${R}] ${W}Bagian 1 : "; sleep 0.01s; read bagi1
+            echo -ne "${R}[${W}/${R}] ${W}Bagian 2 : "; sleep 0.01s; read bagi2
+            jawab=`expr $bagi1 / $bagi2`
+            echo -ne "${R}[${W}/${R}] ${G}$bagi1 / $bagi2 = $jawab "; sleep 0.01s; read;;
+            #perjumlahan
+        ( 4 | 04 ) echo; echo -ne "${R}[${W}+${R}] ${W}Bagian 1 : "; sleep 0.01s; read jumlah1
+            echo -ne "${R}[${W}+${R}] ${W}Bagian 2 : "; sleep 0.01s; read jumlah2
+            jawab=`expr $jumlah1 + $jumlah2`
+            echo -ne "${R}[${W}+${R}] ${G}$jumlah1 + $jumlah2 = $jawab "; sleep 0.01s; read;;
+        ( 99 ) banner-about; about;;
+        ( 0 | 00 ) echo; echo -ne "${R}[${W}-${R}] ${R}Happy Creative ${R}[${W}-${R}]\n"; echo; sleep 2s; exit 1
+    esac
+done
